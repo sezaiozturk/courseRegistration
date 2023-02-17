@@ -1,18 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    name: "dscbnf",
+    name: '',
     number: 0,
-    lesson: ''
+    lessonList: []
 }
 export const nameSlice = createSlice({
     name: 'loginForm',
     initialState,
     reducers: {
         save: (state, action) => {
-            state.name = action.payload
+            state.number = action.payload[0],
+                state.name = action.payload[1]
+        },
+        addLesson: (state, action) => {
+            state.lessonList = [...state.lessonList, action.payload];
         }
     }
 })
-export const { save } = nameSlice.actions;
+export const { save, addLesson } = nameSlice.actions;
 export default nameSlice.reducer;

@@ -11,7 +11,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Tab.Navigator>
+        <Tab.Navigator screenOptions={{ headerTintColor: 'purple' }}>
           <Tab.Screen name='FirstScreen' component={First} />
           <Tab.Screen name='SecondScreen' component={Second} />
         </Tab.Navigator>
